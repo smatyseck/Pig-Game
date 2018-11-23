@@ -26,8 +26,8 @@ function swapPlayers(){
 function rollDice(){
     if (winner) return;
     var dice = [Math.floor(Math.random() * 6) + 1, Math.floor(Math.random() * 6) + 1];
-    document.querySelector('#dice-0').src = 'dice-' + dice[0] + '.png'
-    document.querySelector('#dice-1').src = 'dice-' + dice[1] + '.png'
+    document.querySelector('#dice-0').src = 'img/dice-' + dice[0] + '.png'
+    document.querySelector('#dice-1').src = 'img/dice-' + dice[1] + '.png'
     if (dice[0] === 6 && prevDice[0] === 6 || dice[1] === 6 && prevDice[1] === 6 ||
         dice[0] === 6 && prevDice[1] === 6 || dice[1] === 6 && prevDice[0] === 6 ||
         dice[0] === 6 && dice[1] === 6){
@@ -68,7 +68,6 @@ document.querySelector('.btn-roll').addEventListener('click', rollDice);
 document.querySelector('.btn-hold').addEventListener('click', hold);
 document.querySelector('.btn-new').addEventListener('click', newGame);
 document.querySelector('.max-score').addEventListener('input', function(){
-    console.log(document.getElementById('max-score').value)
     winAmount = parseInt(document.getElementById('max-score').value)
 });
 newGame();
